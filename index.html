@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Life++: An Interactive Sandbox</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="canvas-container">
+        <canvas id="game-canvas"></canvas>
+    </div>
+
+    <div class="bottom-toolbar">
+        <!-- Group 1: Simulation Controls -->
+        <div class="toolbar-group" id="sim-controls">
+            <button id="play-pause-btn" title="Toggle Play/Pause (Space)">▶ Play</button>
+            <div class="slider-container">
+                <label for="speed-slider">Speed</label>
+                <input type="range" id="speed-slider" min="50" max="500" value="100" title="Adjust simulation speed">
+                <span id="speed-value">450ms</span>
+            </div>
+            <button id="step-btn" class="secondary-btn" title="Step Forward (S)">Step</button>
+            <button id="clear-btn" class="secondary-btn" title="Clear Grid (C)">Clear</button>
+            <div class="generation-counter">
+                Gen: <span id="generation-value">0</span>
+            </div>
+        </div>
+
+        <!-- Group 2: Pattern Library -->
+        <div class="toolbar-group" id="pattern-controls">
+            <label for="preset-select">Load Preset:</label>
+            <select id="preset-select" title="Load a classic pattern">
+                <!-- Options will be populated by JavaScript -->
+            </select>
+        </div>
+
+        <!-- Group 3: Drawing Tools -->
+        <div class="toolbar-group" id="draw-controls">
+            <label>Drawing Mode:</label>
+            <div class="brush-mode-group">
+                <button id="brush-cell-btn" class="brush-btn active" title="Toggle Brush Mode (B)">Cell</button>
+                <button id="brush-wall-btn" class="brush-btn" title="Toggle Brush Mode (B)">Wall</button>
+            </div>
+            <label>Color:</label>
+            <div id="color-palette" class="color-palette">
+                <!-- Color swatches will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
